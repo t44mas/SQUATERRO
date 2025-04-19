@@ -20,7 +20,6 @@ class User(SqlAlchemyBase, UserMixin, SerializerMixin):
     hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     preferences = sqlalchemy.Column(sqlalchemy.JSON, nullable=True)   #вегантсво и т.п.
     allergies = sqlalchemy.Column(sqlalchemy.JSON, nullable=True)
-    blacklisted = sqlalchemy.Column(sqlalchemy.JSON, nullable=True) #нежелательные продукты
 
     saved_recipes = orm.relationship("SavedRecipe", back_populates='recipe_of_user')
 
